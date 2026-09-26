@@ -35,10 +35,22 @@ int main()
             bn::backdrop::set_color(bn::color(0x001F));
         }
 
-        // If L is pressed, changed the color to Lemon (Yellow).
+        // If L is pressed, change the color to Lemon (Yellow).
         if (bn::keypad::l_pressed())
         {
             bn::backdrop::set_color(bn::color(0x03FF));
+        }
+
+        // If Start is pressed, change the color back to the default.
+        if (bn::keypad::start_pressed())
+        {
+            bn::backdrop::set_color(bn::color(15, 10, 15));
+        }
+
+        // If Select is pressed, change the color to Silver.
+        if (bn::keypad::select_pressed())
+        {
+            bn::backdrop::set_color(bn::color(0x6318));
         }
 
         // If A is held and B is pressed or vice versa, change the color to Cyan.
@@ -76,6 +88,7 @@ int main()
         {
             bn::backdrop::set_color(bn::color(0x021F));
         }
-        bn::core::update();
+
+        bn::core::update(); // Tells the core to update itself.
     }
 }
