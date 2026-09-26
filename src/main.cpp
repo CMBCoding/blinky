@@ -3,6 +3,7 @@
 #include <bn_color.h>
 #include <bn_core.h>   //Imports the core of Butano files.
 #include <bn_keypad.h> //Imports keypad functionality into the program.
+#include <bn_colors.h> //Imports named colors.
 
 int main()
 {
@@ -28,16 +29,17 @@ int main()
             bn::backdrop::set_color(bn::color(0, 0, 30));
         }
 
-        // If A and B are pressed together, change the color to Purple.
-        if (bn::keypad::a_pressed() && bn::keypad::b_pressed())
+        // If R is pressed, change the color to Red.
+        if (bn::keypad::r_pressed())
         {
-            bn::backdrop::set_color(bn::color(20, 0, 20));
+            bn::backdrop::set_color(bn::color(30, 0, 0));
         }
 
-        // If R is pressed, change the color to Red.
-
         // If L is pressed, changed the color to Lemon (Yellow).
-
+        if (bn::keypad::l_pressed())
+        {
+            bn::backdrop::set_color(bn::color(0x03FF));
+        }
         // If
 
         bn::core::update();
