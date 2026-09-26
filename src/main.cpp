@@ -40,7 +40,24 @@ int main()
         {
             bn::backdrop::set_color(bn::color(0x03FF));
         }
-        // If
+
+        // If A is held and B is pressed or vice versa, change the color to Cyan.
+        if ((bn::keypad::a_held() && bn::keypad::b_pressed()) || (bn::keypad::b_held() && bn::keypad::a_pressed()))
+        {
+            bn::backdrop::set_color(bn::color(0x7FE0));
+        }
+
+        // If R is held and A is pressed, change the color to Magenta.
+        if (bn::keypad::r_held() && bn::keypad::a_pressed())
+        {
+            bn::backdrop::set_color(bn::color(0x7C1F));
+        }
+
+        // If R is held and B is pressed,change the color to Purple.
+        if (bn::keypad::r_held() && bn::keypad::b_pressed())
+        {
+            bn::backdrop::set_color(bn::color(0x4010));
+        }
 
         bn::core::update();
     }
