@@ -20,19 +20,19 @@ int main()
         // If A is pressed, change the color to Alabaster (White).
         if (bn::keypad::a_pressed())
         {
-            bn::backdrop::set_color(bn::color(30, 30, 30));
+            bn::backdrop::set_color(bn::color(0x7FFF));
         }
 
         // If B is pressed, change the color to Blue.
         if (bn::keypad::b_pressed())
         {
-            bn::backdrop::set_color(bn::color(0, 0, 30));
+            bn::backdrop::set_color(bn::color(0x7C00));
         }
 
         // If R is pressed, change the color to Red.
         if (bn::keypad::r_pressed())
         {
-            bn::backdrop::set_color(bn::color(30, 0, 0));
+            bn::backdrop::set_color(bn::color(0x001F));
         }
 
         // If L is pressed, changed the color to Lemon (Yellow).
