@@ -53,12 +53,29 @@ int main()
             bn::backdrop::set_color(bn::color(0x7C1F));
         }
 
-        // If R is held and B is pressed,change the color to Purple.
+        // If R is held and B is pressed, change the color to Purple.
         if (bn::keypad::r_held() && bn::keypad::b_pressed())
         {
             bn::backdrop::set_color(bn::color(0x4010));
         }
 
+        // If L is held and A is pressed, change the color to Lime.
+        if (bn::keypad::l_held() && bn::keypad::a_pressed())
+        {
+            bn::backdrop::set_color(bn::color(0x03E0));
+        }
+
+        // If L is held and B is pressed, change the color to Green.
+        if (bn::keypad::l_held() && bn::keypad::b_pressed())
+        {
+            bn::backdrop::set_color(bn::color(0x0200));
+        }
+
+        // If R is held and L is held, or vice versa, change the color to Orange.
+        if (bn::keypad::r_held() && bn::keypad::l_held())
+        {
+            bn::backdrop::set_color(bn::color(0x021F));
+        }
         bn::core::update();
     }
 }
